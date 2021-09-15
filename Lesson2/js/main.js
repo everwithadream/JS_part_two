@@ -36,6 +36,7 @@ class ProductList {
     totalPrice = price + totalPrice;
   }
   console.log(totalPrice);
+  return totalPrice;
   }
 }
 
