@@ -1,5 +1,8 @@
 Vue.component('products', {
-    props: ['filtered','products'],
+    data: {
+        filtered: [],
+        products: [],
+    },
     data(){
         return {
             catalogUrl: '/catalogData.json',
@@ -7,10 +10,10 @@ Vue.component('products', {
         }
     },
     methods: {
-        filter(){
-            let regexp = new RegExp(this.userSearch, 'i');
-            this.filtered = this.products.filter(el => regexp.test(el.product_name));
-        }
+        // filter(){
+        //     let regexp = new RegExp(this.userSearch, 'i');
+        //     this.filtered = this.products.filter(el => regexp.test(el.product_name));
+        // }
     },
     mounted(){
         this.$parent.getJson(`${API + this.catalogUrl}`)
